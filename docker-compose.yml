@@ -1,15 +1,17 @@
 db:
   image: mongo:latest
-  ports: 
+  ports:
    - "27017:27017"
+  volumes:
+   - /home/leandro/containers/SIGA/mongo:/data/db
 web:
-  build: .
+  build: https://github.com/s0ckz/SIGA.git
   links:
    - db
   ports:
    - "3000:3000"
    - "35729:35729"
   volumes:
-   - ./app:/home/mean/app
-  environment: 
+   - /home/leandro/containers/SIGA/app:/home/mean/app
+  environment:
    NODE_ENV: development
