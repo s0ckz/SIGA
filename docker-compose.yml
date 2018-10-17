@@ -14,4 +14,5 @@ web:
   volumes:
    - /home/leandro/containers/SIGA/app:/home/mean/app
   environment:
-   NODE_ENV: development
+   NODE_ENV: production
+   MONGODB: mongodb://db/mean-auth
